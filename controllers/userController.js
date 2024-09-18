@@ -37,7 +37,7 @@ updateUser(req,res) {
 },
 
 // Creates new user
-createUser(res,res) {
+createUser(req, res) {
     User.create(req.body)
     .then((user) => res.json(user))
     .catch((err) => res.status(500).json(err));
