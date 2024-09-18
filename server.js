@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Import routes
-app.use(routes);
+app.use('/api',routes);
 
 
 // Start the server
