@@ -4,7 +4,7 @@ module.exports = {
     // Get all thoughts
     getThoughts(req,res) {
         Thought.find()
-        .then((thoughts) => res.json(thougts))
+        .then((thoughts) => res.json(thoughts))
         .catch((err) => res.status(500).json(err));
     },
 
@@ -34,7 +34,7 @@ module.exports = {
             ? res.status(404).json({
                 message: 'Thought created, but found no user with that ID',
             })
-            : res.json('Created the thought ���')
+            : res.json('Created the thought')
     )
     .catch((err) => {
         console.error(err);
@@ -83,7 +83,7 @@ module.exports = {
 addReaction(req, res) {
     Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $addToSet: { reaction: req.body } },
+        { $addToSet: { reactions: req.body } },
         { runValidators: true, new: true }
     )
     .then((thought) => 
@@ -98,7 +98,7 @@ addReaction(req, res) {
 removeReaction(req, res) {
     Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $pull: { reaction: { reactionId: req.params.reactionId } } },
+        { $pull: { reactions: { reactionId: req.params.reactionId } } },
         { runValidators: true, new: true }
     )
     .then((thought) =>
