@@ -17,7 +17,7 @@ Uses Insomnia. The API provides routes for managing users, thoughts, friends, an
 ![alt text](image-2.png)
 
 ## Walkthrough Video
-
+https://drive.google.com/file/d/1q855vjIY-SFW2M0V5FSZSgUqE8gO7ZVs/view?usp=sharing
 
 ## License
 This project licensed under the MIT license.
